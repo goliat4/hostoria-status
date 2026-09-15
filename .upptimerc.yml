@@ -1,0 +1,33 @@
+# Konfiguracja Upptime dla strony statusu Hostoria (status.hostoria.pl).
+# Dokumentacja: https://upptime.js.org/docs/configuration
+owner: goliat4
+repo: hostoria-status
+
+sites:
+  - name: Strona hostoria.pl
+    url: https://hostoria.pl
+  - name: Panel klienta (DirectAdmin)
+    url: https://hostoria.pl:2222/
+  - name: Webmail
+    url: https://hostoria.pl/roundcube/
+  - name: Poczta wychodząca (SMTP 465)
+    check: "tcp-ping"
+    url: hostoria.pl
+    port: 465
+  - name: Poczta przychodząca (IMAP 993)
+    check: "tcp-ping"
+    url: hostoria.pl
+    port: 993
+
+status-website:
+  cname: status.hostoria.pl
+  logoUrl: https://raw.githubusercontent.com/goliat4/hostoria-status/main/assets/hostoria-light.svg
+  name: Hostoria - status usług
+  introTitle: "Stan usług **Hostoria** w czasie rzeczywistym."
+  introMessage: Sprawdzamy stronę, panel klienta, webmail i pocztę co 5 minut. Dane pochodzą z publicznego repozytorium na GitHubie. Planowane prace i incydenty opisujemy tutaj oraz w wiadomościach do klientów.
+  navbar:
+    - title: Status
+      href: /
+    - title: hostoria.pl
+      href: https://hostoria.pl
+  theme: dark
